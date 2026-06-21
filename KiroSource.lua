@@ -129,7 +129,7 @@ function library:Window(name)
     Header.ZIndex = 5 + zindex
 
     local HeaderCorner = Instance.new("UICorner")
-    HeaderCorner.CornerRadius = UDim.new(0, 6)
+    HeaderCorner.CornerRadius = UDim.new(0, 10)
     HeaderCorner.Parent = Header
 
     local HeaderText = Instance.new("TextLabel")
@@ -174,6 +174,10 @@ function library:Window(name)
     Window.Position = UDim2.new(0, 0, 0, 0)
     Window.Size = UDim2.new(0, 207, 0, 33)
     Window.ZIndex = 1 + zindex
+
+    local WindowCorner = Instance.new("UICorner")
+    WindowCorner.CornerRadius = UDim.new(0, 10)
+    WindowCorner.Parent = Window
 
     local functions = {}
     functions.__index = functions

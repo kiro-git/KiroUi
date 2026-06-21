@@ -158,7 +158,7 @@ function library:Window(name)
     Minimise.MouseButton1Up:connect(function()
         Window.Visible = not Window.Visible
 	if Window.Visible then
-		Minimise.Text = "_"
+		Minimise.Text = "-"
 	else
 		Minimise.Text = "+"
 	end

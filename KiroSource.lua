@@ -121,7 +121,6 @@ function library:Window(name)
 
     local Header = Instance.new("Frame")
     Header.Name = "Header"
-    Header.CornerRadius = Udim.new(0, 6)
     Header.Parent = UiWindow
     Header.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
     Header.BorderColor3 = Color3.fromRGB(0, 255, 255)

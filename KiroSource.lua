@@ -123,10 +123,14 @@ function library:Window(name)
     Header.Name = "Header"
     Header.Parent = UiWindow
     Header.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
-    Header.BorderColor3 = Color3.fromRGB(0, 255, 255)
+    Header.BorderColor3 = Color3.fromRGB(0, 100, 255)
     Header.Position = UDim2.new(0, 0, -0.0202544238, 0)
     Header.Size = UDim2.new(0, 207, 0, 26)
     Header.ZIndex = 5 + zindex
+
+    local HeaderCorner = Instance.new("UICorner")
+    HeaderCorner.CornerRadius = UDim.new(0, 6)
+    HeaderCorner.Parent = Header
 
     local HeaderText = Instance.new("TextLabel")
     HeaderText.Name = "HeaderText"

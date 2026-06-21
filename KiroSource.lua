@@ -117,10 +117,6 @@ function library:Window(name)
     UiWindow.Active = true
     Dragify(UiWindow)
 
-    local UiWindowCorner = Instance.new("UICorner")
-    UiWindowCorner.CornerRadius = UDim.new(0, 6)
-    UiWindowCorner.Parent = UiWindow
-
     xOffset = xOffset + 230
 
     local Header = Instance.new("Frame")
@@ -131,10 +127,6 @@ function library:Window(name)
     Header.Position = UDim2.new(0, 0, -0.0202544238, 0)
     Header.Size = UDim2.new(0, 207, 0, 26)
     Header.ZIndex = 5 + zindex
-
-    local HeaderCorner = Instance.new("UICorner")
-    HeaderCorner.CornerRadius = UDim.new(0, 6)
-    HeaderCorner.Parent = Header
 
     local HeaderText = Instance.new("TextLabel")
     HeaderText.Name = "HeaderText"
@@ -162,11 +154,6 @@ function library:Window(name)
     Minimise.Text = "_"
     Minimise.TextColor3 = Color3.fromRGB(0, 0, 0)
     Minimise.TextSize = 20.000
-
-    local MinimiseCorner = Instance.new("UICorner")
-    MinimiseCorner.CornerRadius = UDim.new(0, 6)
-    MinimiseCorner.Parent = Minimise
-
     Minimise.MouseButton1Up:connect(function()
         Window.Visible = not Window.Visible
 	if Window.Visible then
@@ -183,10 +170,6 @@ function library:Window(name)
     Window.Position = UDim2.new(0, 0, 0, 0)
     Window.Size = UDim2.new(0, 207, 0, 33)
     Window.ZIndex = 1 + zindex
-
-    local WindowCorner = Instance.new("UICorner")
-    WindowCorner.CornerRadius = UDim.new(0, 6)
-    WindowCorner.Parent = Window
 
     local functions = {}
     functions.__index = functions
@@ -223,10 +206,6 @@ function library:Window(name)
         Button.TextWrapped = true
         Button.Text = name
         Button.MouseButton1Down:Connect(callback)
-
-        local ButtonCorner = Instance.new("UICorner")
-        ButtonCorner.CornerRadius = UDim.new(0, 5)
-        ButtonCorner.Parent = Button
 
         pastSliders[winCount] = false
     end
@@ -307,10 +286,6 @@ function library:Window(name)
             callback(ToggleFiller.Visible)
         end)
 
-        local ToggleButtonCorner = Instance.new("UICorner")
-        ToggleButtonCorner.CornerRadius = UDim.new(0, 4)
-        ToggleButtonCorner.Parent = ToggleButton
-
         ToggleFiller.Name = "ToggleFiller"
         ToggleFiller.Parent = ToggleButton
         ToggleFiller.BackgroundColor3 = Color3.fromRGB(68, 189, 50)
@@ -319,11 +294,6 @@ function library:Window(name)
         ToggleFiller.Size = UDim2.new(0, 12, 0, 12)
         ToggleFiller.Visible = on
         ToggleFiller.ZIndex = 2 + zindex
-
-        local ToggleFillerCorner = Instance.new("UICorner")
-        ToggleFillerCorner.CornerRadius = UDim.new(0, 3)
-        ToggleFillerCorner.Parent = ToggleFiller
-
         pastSliders[winCount] = false
     end
     function functions:Box(text, callback)
@@ -348,11 +318,6 @@ function library:Window(name)
         TextBox.TextSize = 16.000
         TextBox.TextStrokeColor3 = Color3.fromRGB(245, 246, 250)
         TextBox.ZIndex = 2 + zindex
-
-        local TextBoxCorner = Instance.new("UICorner")
-        TextBoxCorner.CornerRadius = UDim.new(0, 5)
-        TextBoxCorner.Parent = TextBox
-
         TextBox:GetPropertyChangedSignal('Text'):connect(function()
             callback(TextBox.Text, false)
         end)
@@ -451,10 +416,6 @@ function library:Window(name)
         Slider.InputBegan:Connect(SliderMovement) 
         Slider.InputEnded:Connect(SliderEnd)      
 
-        local SliderCorner = Instance.new("UICorner")
-        SliderCorner.CornerRadius = UDim.new(1, 0)
-        SliderCorner.Parent = Slider
-
         SliderButton.Position = UDim2.new(0, (Slider.Size.X.Offset - 5) * ((default - min)/(max-min)), -1.333337, 0)
         SliderButton.Name = "SliderButton"
         SliderButton.Parent = Slider
@@ -464,10 +425,6 @@ function library:Window(name)
         SliderButton.ZIndex = 3 + zindex
         SliderButton.InputBegan:Connect(SliderMovement)
         SliderButton.InputEnded:Connect(SliderEnd)    
-
-        local SliderButtonCorner = Instance.new("UICorner")
-        SliderButtonCorner.CornerRadius = UDim.new(1, 0)
-        SliderButtonCorner.Parent = SliderButton
 
         Current.Name = "Current"
         Current.Parent = SliderButton
@@ -499,10 +456,6 @@ function library:Window(name)
         SilderFiller.Size = UDim2.new(0, (Slider.Size.X.Offset - 5) * ((default - min)/(max-min)), 0, 6)
         SilderFiller.ZIndex = 2 + zindex
         SilderFiller.BorderMode = Enum.BorderMode.Inset
-
-        local SilderFillerCorner = Instance.new("UICorner")
-        SilderFillerCorner.CornerRadius = UDim.new(1, 0)
-        SilderFillerCorner.Parent = SilderFiller
 
         Min.Name = "Min"
         Min.Parent = Slider
@@ -569,11 +522,6 @@ function library:Window(name)
         Dropdown.TextStrokeTransparency = 123.000
         Dropdown.TextWrapped = true
         Dropdown.ZIndex = 3 + zindex
-
-        local DropdownCorner = Instance.new("UICorner")
-        DropdownCorner.CornerRadius = UDim.new(0, 5)
-        DropdownCorner.Parent = Dropdown
-
         Dropdown.MouseButton1Up:Connect(function()
             for i, v in pairs(dropdowns) do
                 if v ~= DropdownFrame then
@@ -636,11 +584,6 @@ function library:Window(name)
             Button_2.ZIndex = 6 + zindex
             Button_2.Text = name
             Button_2.TextWrapped = true
-
-            local Button2Corner = Instance.new("UICorner")
-            Button2Corner.CornerRadius = UDim.new(0, 4)
-            Button2Corner.Parent = Button_2
-
             canvasSize = canvasSize + 27
             DropdownFrame.CanvasSize = UDim2.new(0, 182, 0, canvasSize + 1)
             if #DropdownFrame:GetChildren() < 8 then
@@ -750,10 +693,6 @@ function library:Window(name)
         ColorPickerFrame.ZIndex = 3 + zindex
         ColorPickerFrame.Visible = false
 
-        local ColorPickerFrameCorner = Instance.new("UICorner")
-        ColorPickerFrameCorner.CornerRadius = UDim.new(0, 6)
-        ColorPickerFrameCorner.Parent = ColorPickerFrame
-
         ToggleRGB.Name = "ToggleRGB"
         ToggleRGB.Parent = ColorPickerFrame
         ToggleRGB.BackgroundColor3 = Color3.fromRGB(47, 54, 64)
@@ -765,10 +704,6 @@ function library:Window(name)
         ToggleRGB.TextColor3 = Color3.fromRGB(0, 0, 0)
         ToggleRGB.TextSize = 14.000
         ToggleRGB.ZIndex = 4 + zindex
-
-        local ToggleRGBCorner = Instance.new("UICorner")
-        ToggleRGBCorner.CornerRadius = UDim.new(0, 4)
-        ToggleRGBCorner.Parent = ToggleRGB
 
         ToggleFiller_2.Name = "ToggleFiller"
         ToggleFiller_2.Parent = ToggleRGB
@@ -802,10 +737,6 @@ function library:Window(name)
         ClosePicker.TextColor3 = Color3.fromRGB(245, 246, 250)
         ClosePicker.TextSize = 18.000
         ClosePicker.ZIndex = 4 + zindex
-
-        local ClosePickerCorner = Instance.new("UICorner")
-        ClosePickerCorner.CornerRadius = UDim.new(0, 4)
-        ClosePickerCorner.Parent = ClosePicker
         ClosePicker.MouseButton1Down:Connect(function()
             ColorPickerFrame.Visible = not ColorPickerFrame.Visible
         end)
